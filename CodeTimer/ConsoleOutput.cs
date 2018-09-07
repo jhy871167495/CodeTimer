@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CodeTimer
 {
-    class ConsoleOutput : IOutput
+    public class ConsoleOutput : IOutput
     {
         public ConsoleColor ForegroundColor
         {

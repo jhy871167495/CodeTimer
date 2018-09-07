@@ -11,7 +11,7 @@ namespace CodeTimer.Demo
     {
         static void Main(string[] args)
         {
-            CodeTimer.Evaluate("A", () => { Console.WriteLine("a"); }, 1, true);
+            CodeTimer.Evaluate("A", () => { Console.WriteLine("a"); }, 100, true);
 
             Console.ReadKey(true);
         }

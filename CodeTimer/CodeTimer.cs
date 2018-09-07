@@ -12,6 +12,17 @@ namespace CodeTimer
         public static void Evaluate(string displayName, Action action,
             int iterationCount, bool isInConsole)
         {
+            IOutput output = GetOutputByType(isInConsole);
+
+            Initialize(output);
+
+            Monitor(displayName, iterationCount, action, output);
+
+            End();
+        }
+
+        public static IOutput GetOutputByType(bool isInConsole)
+        {
             IOutput output;
             if (isInConsole)
             {
@@ -22,11 +33,7 @@ namespace CodeTimer
                 output = new DebugOutput();
             }
 
-            Initialize(output);
-
-            Monitor(displayName, iterationCount, action, output);
-
-            End();
+            return output;
         }
 
         [DllImport("kernel32.dll")]
