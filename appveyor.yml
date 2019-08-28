@@ -1,5 +1,10 @@
 version: 1.0.{build}
 image: Visual Studio 2017
+configuration:
+- Release
+- Debug
+before_build:
+- nuget restore
 build:
   project: CodeTimer.sln
   verbosity: minimal
